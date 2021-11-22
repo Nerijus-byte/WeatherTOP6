@@ -36,6 +36,7 @@
   "devDependencies": {
     "resolve-url-loader": "^4.0.0",
     "sass": "^1.42.1",
-    "sass-loader": "^12.1.0"
+    "sass-loader": "^12.1.0",
+    "weather-icons": "github:erikflowers/weather-icons"
   }
 }

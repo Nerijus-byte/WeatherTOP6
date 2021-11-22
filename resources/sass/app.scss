@@ -1,5 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
+@import '~weather-icons/sass/weather-icons';
 
-body{
-  color: red;
+.card {
+  color: #4B515D;
+  border-radius: 35px;
 }
+
+.display-4 {
+  color: #1C2331;
+}
+
+.small condition {
+  color: #868B94;
+}
+
+.fas{
+  color: #868B94;
+}
+
+.flex-grow-1 {
+  font-size: 1rem;
+}
+
+.weather-icon {
+  font-size: 4rem;
+}
+

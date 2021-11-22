@@ -1,14 +1,17 @@
-window.axios = require('axios');
-window.bootstrap = require('bootstrap');
-
 let time = new Date().toLocaleTimeString();
 time = time.substring(0,2) + ':00:00';
 let date = new Date().toLocaleDateString();
 let dateTime = date + ' ' + time;
 
+let container = document.querySelector('.container');
+function showCards() {
+    if (container.classList.contains('d-none')) {
+        container.classList.remove('d-none');
+    }
+}
 
 function fetchWeatherByCity(city) {
-    return fetch(`./weather/${city}`)
+    return fetch(`/weather/${city}`)
         .then(response => response.json());
 }
 
@@ -19,6 +22,8 @@ function updateAllBlocks() {
         fetchWeatherByCity(cities[i]).then(data => {
             let info = data.forecastTimestamps.filter(x => x.forecastTimeUtc === dateTime);
             updateBlock(i, info[0]);
+        }).finally(() => {
+            showCards();
         });
     }
 }
